@@ -9,7 +9,7 @@ class ItemBase(BaseModel):
 class ItemCreate(ItemBase):
     pass
 
-
+#khai báo class item
 class Item(ItemBase):
     id: int
     owner_id: int
