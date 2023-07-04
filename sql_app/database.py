@@ -2,9 +2,9 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-SQLALCHEMY_DATABASE_URL = "sqlite:///./sql.db"
+#SQLALCHEMY_DATABASE_URL = "sqlite:///./sq2.db"
 # SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
-
+SQLALCHEMY_DATABASE_URL = "mysql+mysqlconnector://root@127.0.0.1:3306/serversiderendering"
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
 )
