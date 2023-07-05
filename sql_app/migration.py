@@ -1,7 +1,5 @@
-﻿from database import create_tables
+﻿# khoi tang bang de luu tru thong tin
+from database import create_tables
 
 
 create_tables()
-"""
-thực hiện chạy khai báo table
-"""
