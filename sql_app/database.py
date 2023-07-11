@@ -22,4 +22,5 @@ def get_session():
 def create_tables():
     from models import User
     from models import Item
+    from models import Email
     Base.metadata.create_all(engine)

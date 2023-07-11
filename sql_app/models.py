@@ -24,3 +24,10 @@ class Item(Base):
     owner_id = Column(Integer, ForeignKey("users.id"))
 
     owner = relationship("User", back_populates="items")
+class Email(Base):
+    __tablename__ = "message"
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String(255), index=True)
+    messeages = Column(String(200), index=True)
+    owner_id = Column(Integer, ForeignKey("users.id"))
+    owner = relationship("User", back_populates="Email")

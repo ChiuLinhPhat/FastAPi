@@ -1,0 +1,5 @@
+﻿python-multipart
+python-jose[cryptography]
+sqlchermy
+uvicorn
+fastapi

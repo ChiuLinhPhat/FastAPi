@@ -3,7 +3,7 @@ from sqlalchemy.orm import relationship
 
 from database import Base
 
-
+#khai bao bang users
 class User(Base):
     __tablename__ = "users"
 
@@ -14,7 +14,7 @@ class User(Base):
 
     items = relationship("Item", back_populates="owner")
 
-
+#khai bao bang item
 class Item(Base):
     __tablename__ = "items"
 
