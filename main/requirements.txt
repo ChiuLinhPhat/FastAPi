@@ -1,0 +1,19 @@
+motor #3.1.1
+python-jose[cryptography]
+bcrypt # 4.0.1
+uvicorn # 0.21.1
+pymongo # 4.3.3
+fastapi # 0.95.0
+pydantic[email,dotenv] #1.10.7
+passlib # 1.7.4
+beanie # 1.18.0
+httpx # 0.24.0
+mongomock_motor # 0.0.19
+python-multipart
+` If use install  packages on file had click open terminal
+    had to target write on terminal is
+    cd C:\Users\PycharmProjects\{name project}\{Python Package have file requirements.txt
+
+ } `
+ `had syntax is pip install -r requirements.txt
+ `
