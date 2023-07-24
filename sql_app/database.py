@@ -3,7 +3,7 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 
 #SQLALCHEMY_DATABASE_URL = "sqlite:///./sq2.db"
 # SQLALCHEMY_DATABASE_URL = "postgresql://user:password@postgresserver/db"
-url = 'mysql+pymysql://root@127.0.0.1:3306/test'
+url = 'mysql+pymysql://root@127.0.0.1:3306/authen2'
 Base = declarative_base()
 engine = create_engine(url)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

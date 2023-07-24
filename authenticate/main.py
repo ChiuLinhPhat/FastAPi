@@ -4,8 +4,9 @@ from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from jose import JWTError, jwt
 from passlib.context import CryptContext
-from pydantic import BaseModel
+from authenticate.Schemas import *
 app = FastAPI()
+#SSL -hand hex32
 SECRET_KEY="60bcf16729cfdfa7587365cf8ff11e2e8c2a89d25f0b83e57d0f719c5baf711e"
 ALGORITHM= "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
@@ -30,29 +31,9 @@ fake_users_db = {
         "disabled": False,
     }
 }
-
-
-class Token(BaseModel):
-    access_token: str
-    token_type: str
-
-class TokenData(BaseModel):
-    username: str | None = None
-
-
-class User(BaseModel):
-    username: str
-    email: str | None = None
-    full_name: str | None = None
-    disabled: bool | None = None
-
-
-class UserInDB(User):
-    hashed_password: str
-
-
+#change password words with anphabels to hex32
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
+#check infro of token login
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 app = FastAPI()
@@ -111,14 +92,12 @@ async def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
         raise credentials_exception
     return user
 
-
 async def get_current_active_user(
     current_user: Annotated[User, Depends(get_current_user)]
 ):
     if current_user.disabled:
         raise HTTPException(status_code=400, detail="Inactive user")
     return current_user
-
 
 @app.post("/token", response_model=Token)
 async def login_for_access_token(
@@ -143,7 +122,6 @@ async def read_users_me(
     current_user: Annotated[User, Depends(get_current_active_user)]
 ):
     return current_user
-
 
 @app.get("/users/me/items/")
 async def read_own_items(

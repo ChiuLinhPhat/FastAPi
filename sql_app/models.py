@@ -1,9 +1,11 @@
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
-
+from pydantic import BaseModel
 from database import Base
-
-
+class Data( BaseModel):
+    name: str
+    Account_id : str
+#base là model chính dưới dangj sql hiểu cơ bản là create table on api is base
 class User(Base):
     __tablename__ = "users"
 

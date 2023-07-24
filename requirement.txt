@@ -1,5 +1,7 @@
 ﻿python-multipart
 python-jose[cryptography]
-sqlchermy
+SQLAlchemy
 uvicorn
 fastapi
+`if use this to install documents syntax click right enter open in terminal  or cd: C:\user\PycharmpProject\{project name}\{package to save file txt}`
+`syntax pip install -r requirements.txt`

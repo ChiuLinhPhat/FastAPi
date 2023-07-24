@@ -1,0 +1,8 @@
+﻿create api to save create account
+B2:
+login to enter 2 values username and password
+check username have modifines on database
+chage from passwords to hexa
+check passwords have true on database with hash passwords
+if forget account passwords  enter 2 value account and phone or e-mail had enter on database
+send code

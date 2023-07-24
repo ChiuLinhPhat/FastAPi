@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from sql_app.models import User, Item
 from .schemas import UserCreate, ItemCreate
-
+# objective of crud with api works
 def get_user(db: Session, user_id: int):
     return db.query(User).filter(User.id == user_id).first()
 
